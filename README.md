@@ -63,9 +63,9 @@ This repository tracks notable enterprise **SaaS platforms** and production-grad
 
 ## 💻 Open-Source Repositories & Frameworks
 
-*Curated production tools, blockchain ledgers, GS1 standards engines, and inventory management systems. Sorted by **GitHub Star Count** (Descending).*
+*Curated production tools, blockchain ledgers, GS1 standards engines, and inventory management systems. Sorted by **GitHub Stars_Count** (Descending).*
 
-| Project & Repository | Star Badge (Click to View Stargazers) | Description & Focus Area | Key Tech Stack |
+| Project & Repository | Stars_Badge (Click to View Stargazers) | Description & Focus Area | Key Tech Stack |
 | :--- | :---: | :--- | :--- |
 | **[Hyperledger Fabric](https://github.com/hyperledger/fabric)** | [![Stars](https://img.shields.io/github/stars/hyperledger/fabric?style=social&color=white)](https://github.com/hyperledger/fabric/stargazers) | Enterprise permissioned distributed ledger technology (DLT) framework widely used for food traceability and supply chain provenance. | Go, Docker, gRPC |
 | **[OpenBoxes](https://github.com/openboxes/openboxes)** | [![Stars](https://img.shields.io/github/stars/openboxes/openboxes?style=social&color=white)](https://github.com/openboxes/openboxes/stargazers) | Open-source warehouse logistics and supply chain inventory management system for tracking shipments, stock moves, and lot expiration. | Java, Grails, Groovy, MySQL |
@@ -93,7 +93,7 @@ Contributions are warmly welcomed! Help keep this ecosystem comprehensive and ac
 
 1. **Fork** this repository.
 2. Add your SaaS or Open-Source project to `README.md` following the existing tabular structure.
-3. Ensure links, pricing, free tier details, and repository star badges are verified.
+3. Ensure links, pricing, free tier details, and repository Stars_Badges are verified.
 4. Submit a **Pull Request** with a concise description of the addition.
 
 For guidelines on list curation, visit [Awesome-Awesome-Awesome](https://github.com/ishandutta2007/Awesome-Awesome-Awesome).
