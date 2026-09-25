@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Dark Tech Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+
+    <!-- Glowing Accents -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(30, 41, 59, 0.7)" />
+      <stop offset="100%" stop-color="rgba(15, 23, 42, 0.85)" />
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.05); }
+      }
+      @keyframes dashFlow {
+        0% { stroke-dashoffset: 100; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes floatParticle {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes nodePulse {
+        0%, 100% { r: 5px; opacity: 0.6; }
+        50% { r: 8px; opacity: 1; }
+      }
+
+      .bg-grid { stroke: rgba(255, 255, 255, 0.04); stroke-width: 1; }
+      .flow-line { stroke: url(#accentGrad); stroke-width: 2.5; stroke-dasharray: 8 6; animation: dashFlow 20s linear infinite; }
+      .node { fill: #38bdf8; animation: nodePulse 3s ease-in-out infinite; }
+      .floating-card { animation: floatParticle 6s ease-in-out infinite; }
+      .title-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; fill: #ffffff; }
+      .subtitle-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; fill: #94a3b8; }
+      .pill-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 13px; fill: #38bdf8; }
+    </style>
+  </defs>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Background Grid -->
+  <g class="bg-grid">
+    <path d="M0 60 H1200 M0 120 H1200 M0 180 H1200 M0 240 H1200 M0 300 H1200" />
+    <path d="M150 0 V360 M300 0 V360 M450 0 V360 M600 0 V360 M750 0 V360 M900 0 V360 M1050 0 V360" />
+  </g>
+
+  <!-- Glowing Background Orbs (Behind content) -->
+  <circle cx="200" cy="90" r="140" fill="#38bdf8" opacity="0.12" filter="url(#glow)" />
+  <circle cx="1000" cy="270" r="160" fill="#818cf8" opacity="0.15" filter="url(#glow)" />
+
+  <!-- Animated Supply Chain Flow Lines (Background Dynamic Layer) -->
+  <path d="M 100 290 Q 300 240 500 290 T 900 270 T 1100 310" fill="none" class="flow-line" opacity="0.5" />
+  <path d="M 50 70 Q 350 120 650 60 T 1150 90" fill="none" class="flow-line" opacity="0.3" />
+
+  <!-- Flow Nodes -->
+  <circle cx="300" cy="265" class="node" />
+  <circle cx="700" cy="280" class="node" style="animation-delay: 1s;" />
+  <circle cx="900" cy="270" class="node" style="animation-delay: 2s;" />
+
+  <!-- Foreground Content Container / Main Card -->
+  <g filter="url(#shadow)">
+    <!-- Sleek Glass Card Body -->
+    <rect x="60" y="45" width="1080" height="270" rx="14" fill="url(#cardGrad)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5" />
+    
+    <!-- Top Decorative Line -->
+    <rect x="60" y="45" width="1080" height="4" rx="2" fill="url(#accentGrad)" />
+
+    <!-- Badges / Pills Row inside header -->
+    <g transform="translate(100, 85)">
+      <rect width="170" height="28" rx="14" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1" />
+      <text x="85" y="19" text-anchor="middle" class="pill-text">📦 FREIGHT FORWARDING</text>
+
+      <g transform="translate(185, 0)">
+        <rect width="160" height="28" rx="14" fill="rgba(129, 140, 248, 0.12)" stroke="rgba(129, 140, 248, 0.3)" stroke-width="1" />
+        <text x="80" y="19" text-anchor="middle" class="pill-text" style="fill: #818cf8;">🌱 FOOD TRACEABILITY</text>
+      </g>
+
+      <g transform="translate(360, 0)">
+        <rect width="140" height="28" rx="14" fill="rgba(192, 132, 252, 0.12)" stroke="rgba(192, 132, 252, 0.3)" stroke-width="1" />
+        <text x="70" y="19" text-anchor="middle" class="pill-text" style="fill: #c084fc;">⚡ FSMA 204 READY</text>
+      </g>
+    </g>
+
+    <!-- Main Foreground Title (Clean & Unobscured) -->
+    <text x="100" y="170" class="title-text" font-size="34" filter="url(#shadow)">
+      Awesome Freight Forwarding &amp; Food Traceability
+    </text>
+
+    <!-- Subtitle -->
+    <text x="100" y="212" class="subtitle-text" font-size="17">
+      Curated SaaS Platforms • FSMA 204 CTE/KDE Networks • Cold-Chain IoT • Open-Source Ecosystem
+    </text>
+
+    <!-- Bottom Metric / Feature Highlights -->
+    <g transform="translate(100, 245)">
+      <!-- Item 1 -->
+      <g>
+        <circle cx="10" cy="12" r="4" fill="#38bdf8" />
+        <text x="24" y="16" class="subtitle-text" font-size="13" fill="#cbd5e1">Farm-to-Fork Genealogy</text>
+      </g>
+
+      <!-- Item 2 -->
+      <g transform="translate(200, 0)">
+        <circle cx="10" cy="12" r="4" fill="#818cf8" />
+        <text x="24" y="16" class="subtitle-text" font-size="13" fill="#cbd5e1">GS1 EPCIS Standards</text>
+      </g>
+
+      <!-- Item 3 -->
+      <g transform="translate(390, 0)">
+        <circle cx="10" cy="12" r="4" fill="#c084fc" />
+        <text x="24" y="16" class="subtitle-text" font-size="13" fill="#cbd5e1">Rapid Recall Readiness</text>
+      </g>
+
+      <!-- Item 4 -->
+      <g transform="translate(580, 0)">
+        <circle cx="10" cy="12" r="4" fill="#34d399" />
+        <text x="24" y="16" class="subtitle-text" font-size="13" fill="#34d399">SaaS &amp; Open-Source Directory</text>
+      </g>
+    </g>
+  </g>
+</svg>
